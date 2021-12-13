@@ -1,5 +1,7 @@
+import FilmsComponent from "../../components/Films";
+
 export default function FilmsPage(){
     return (
-        <div>Films</div>
+        <FilmsComponent />
     )
 }

@@ -1,37 +1,43 @@
 import { AnyAction } from "redux";
+import { FETCH_PEOPLE_FAILURE, FETCH_PEOPLE_SUCCES, FETCH_PEOPLE_REQUEST } from "../../constants"
 
+interface Person {
+    id: {}
+}
 interface PeopleState {
     pending: boolean,
     error: string | null,
-    people: Array<object>
+    people: Array<object>,
+    person: Person
 }
 
 const initialState: PeopleState = {
     pending: false,
     error: null,
-    people: []
+    people: [],
+    person: { id: {}}
 }
 
 export default function peopleReducer(state = initialState, action: AnyAction) {
     switch (action.type) {
-        case "FETCH_PEOPLE_REQUEST":
+        case FETCH_PEOPLE_REQUEST:
             return {
                 ...state,
                 pending: true,
             }
-        case "FETCH_PEOPLE_SUCCES":
+        case FETCH_PEOPLE_SUCCES:
             return {
                 ...state,
                 pending: false,
                 films: action.payload,
                 error: null
             }
-        case "FETCH_PEOPLE_FAILURE":
+        case FETCH_PEOPLE_FAILURE:
             return {
                 ...state,
                 pending: false,
                 films: [],
-                error: action.payload.error //error
+                error: action.payload.error
             }
         default: {
             return state;

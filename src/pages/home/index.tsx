@@ -1,5 +1,7 @@
-export default function HomePage(){
-    return (
-        <div>Welcome Home, jedi</div>
+import HomeComponent from "../../components/Home"
+
+export default function HomePage(props: any) {
+    return(
+        <HomeComponent />
     )
 }

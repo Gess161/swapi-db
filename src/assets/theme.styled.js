@@ -1,0 +1,5 @@
+const lightThene = {
+    colors: {
+        
+    }
+}
