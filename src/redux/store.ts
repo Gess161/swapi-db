@@ -6,7 +6,7 @@ import { watcherSaga } from "./sagas/rootSaga";
 const sagaMiddleware = createSagaMiddleware();
 
 export const store = configureStore({
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware({thunk : false, serializableCheck: false}).concat(sagaMiddleware),
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({ thunk: false, serializableCheck: false }).concat(sagaMiddleware),
     reducer: {
         rootReducer
     }

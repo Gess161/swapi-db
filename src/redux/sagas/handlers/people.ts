@@ -1,13 +1,15 @@
 import { call, put } from "@redux-saga/core/effects";
 import { fetchPeoplesSucces } from "../../actions/peopleActions";
-import { requestFetchFilms } from "../requests/films";
+import { requestFetchPeople } from "../requests/people";
+import { Response } from "../../../types";
 
-
-export function* handleFetchPeople() {
+export function* handleFetchPeople(action: any) {
+    console.log(action)
+    const url: string = action.payload
     try {
-        const response: object = yield call(requestFetchFilms)
-        const { data: { results } }: any = response;
-        yield put(fetchPeoplesSucces(results));
+        const response: Response = yield call(requestFetchPeople, url);
+        const { data: { results, next } }: Response = response;
+        yield put(fetchPeoplesSucces({ results, next }));
     } catch (error) {
         console.log(error)
     }

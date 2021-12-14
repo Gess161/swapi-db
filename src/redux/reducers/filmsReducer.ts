@@ -7,13 +7,15 @@ interface FilmsState {
     error: string | null,
     films: Array<any>
     film: {},
+    next: string | null
 }
 
 const initialState: FilmsState = {
     pending: false,
     error: null,
     films: [],
-    film: {}
+    film: {},
+    next: ""
 }
 
 export default function filmsReducer(state = initialState, action: AnyAction) {
