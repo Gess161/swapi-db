@@ -16,7 +16,7 @@ export default function FilmsComponent() {
 
     useEffect(() => {
         if (films.length < 1) {
-            dispatch(fetchFilmsRequest())
+            dispatch(fetchFilmsRequest(''))
         }
         // eslint-disable-next-line
     }, [])

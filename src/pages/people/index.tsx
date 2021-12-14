@@ -1,5 +1,7 @@
+import People from "../../components/People";
+
 export default function PeoplePage(){
     return (
-        <div>People</div>
+        <People />
     )
 }

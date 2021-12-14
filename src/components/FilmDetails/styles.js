@@ -9,11 +9,4 @@ export const Container = styled.div`
     margin: 0 auto;
     align-items: center;
 
-    .person-container {
-        justify-content: center;
-        display: flex;
-        width: 100%;
-        margin: 0 auto;
-        flex-wrap: wrap
-    }
 `
