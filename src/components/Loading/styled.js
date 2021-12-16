@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Loading = styled.div`
+    margin: 0 auto;
     display: flex;
     justify-self: center;
     align-self: center;

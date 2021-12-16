@@ -11,6 +11,7 @@ export default function Router() {
         <Routes>
             <Route path="/" element={<Layout />}>
                 <Route index element={<Home />} />
+                <Route path="swapi-db" element={<Home />} />
                 <Route path="films" element={<Films />} />
                 <Route path="film/:filmId" element={<Film />} />
                 <Route path="people" element={<People />} />
