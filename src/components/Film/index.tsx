@@ -7,7 +7,7 @@ export default function FilmComponent(props: any) {
 
     return (
         <Container>
-            <div onClick={() => navigate(`/film/${episode}`)}>{title}</div>
+            <div onClick={() => navigate(`/film/${episode}`)}> {title} </div>
         </Container>
     )
 }

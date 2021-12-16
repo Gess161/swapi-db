@@ -9,7 +9,6 @@ import { Loading } from "../Loading/styled"
 import Person from "../Person"
 import PeopleContainer  from "./styled"
 
-
 export default function People() {
     const state = useAppSelector(state => state.rootReducer.peopleReducer)
     const people = state.people
@@ -21,9 +20,7 @@ export default function People() {
     }
 
     useEffect(() => {
-        if (people.length < 1) {
             fetchData()
-        }
         // eslint-disable-next-line
     }, [])
 
