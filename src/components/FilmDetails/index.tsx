@@ -11,6 +11,7 @@ import { fetchFilmsRequest } from "../../redux/actions/filmsActions";
 import AboutFilm from "./AboutFilm/index";
 import { FilmType } from "../../types";
 import PeopleContainer from "../People/styled";
+import { useNavigate } from "react-router-dom";
 interface PersonInterface {
     name: string,
     id: string,
@@ -22,9 +23,13 @@ export default function FilmDetailsComponent(props: any) {
     const dispatch = useAppDispatch()
     const [people, setPeople] = useState(initialState)
     const films: FilmType[] = useAppSelector(state => state.rootReducer.filmsReducer.films)
+    const navigate = useNavigate()
     const { filmId } = props.params;
 
     useEffect(() => {
+        if(filmId <= 0 || filmId > films.length){
+            navigate(`/404`)
+        }
         if (films.length > 0) {
             const charactersUrlList = films[filmId - 1].characters
             const idList = getPeopleId(charactersUrlList);
@@ -45,7 +50,7 @@ export default function FilmDetailsComponent(props: any) {
             dispatch((fetchFilmsRequest('')))
         }
         // eslint-disable-next-line
-    }, [films])
+    }, [films, filmId])
 
     return (
         <Container>

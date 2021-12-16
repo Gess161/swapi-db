@@ -1,4 +1,5 @@
 import { Container } from "./styled";
+import logo from "../../assets/images/logo.png"
 
 export default function HomeComponent() {
     return (
@@ -24,7 +25,7 @@ export default function HomeComponent() {
                 Pellentesque pharetra justo eget dolor mollis, a dignissim lectus porta.
             </p>
 
-            <img alt="logo"src="https://logos-download.com/wp-content/uploads/2016/09/Star_Wars_logo-1.png" />
+            <img alt="logo" src={logo} />
         </Container>
     )
 }

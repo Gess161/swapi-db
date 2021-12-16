@@ -1,4 +1,6 @@
 import { createGlobalStyle } from "styled-components";
+import bgDark from "../assets/images/dark-bg.png"
+import bgLight from "../assets/images/light-bg.png"
 
 const backgroundColor = "#0F0F0E"
 
@@ -16,10 +18,24 @@ const GlobalStyles = createGlobalStyle`
     }
     
     body {
+        margin: 0 auto;
+        width: 100%;
+        height: 100vh;
         background: ${backgroundColor};
-        background-image: url(https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3RhcnJ5JTIwc2t5fGVufDB8fDB8fA%3D%3D&w=1000&q=80);
         font-family: 'Roboto', sans-serif;
         color: white;
+        position: relative;
+        &:before{
+            content: '';
+            display: flex;
+            width: 100vw;
+            height: 100%;
+            background: url(${bgLight});
+            background-size: cover;
+            z-index: -1;
+            opacity: 0.5;
+            position: absolute;
+        }
     }
 `
 
