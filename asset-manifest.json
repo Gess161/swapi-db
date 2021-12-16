@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.js": "/swapi-db/static/js/main.5d877f2e.chunk.js",
+    "main.js.map": "/swapi-db/static/js/main.5d877f2e.chunk.js.map",
+    "runtime-main.js": "/swapi-db/static/js/runtime-main.f959e4c0.js",
+    "runtime-main.js.map": "/swapi-db/static/js/runtime-main.f959e4c0.js.map",
+    "static/js/2.5cadc64f.chunk.js": "/swapi-db/static/js/2.5cadc64f.chunk.js",
+    "static/js/2.5cadc64f.chunk.js.map": "/swapi-db/static/js/2.5cadc64f.chunk.js.map",
+    "static/js/3.21bb341b.chunk.js": "/swapi-db/static/js/3.21bb341b.chunk.js",
+    "static/js/3.21bb341b.chunk.js.map": "/swapi-db/static/js/3.21bb341b.chunk.js.map",
+    "index.html": "/swapi-db/index.html",
+    "static/js/2.5cadc64f.chunk.js.LICENSE.txt": "/swapi-db/static/js/2.5cadc64f.chunk.js.LICENSE.txt",
+    "static/media/404.f7e4d6de.svg": "/swapi-db/static/media/404.f7e4d6de.svg",
+    "static/media/dark-bg.c27083c2.png": "/swapi-db/static/media/dark-bg.c27083c2.png",
+    "static/media/light-bg.168e7e4d.png": "/swapi-db/static/media/light-bg.168e7e4d.png",
+    "static/media/lightSide.e7e23661.svg": "/swapi-db/static/media/lightSide.e7e23661.svg",
+    "static/media/logo.1b3980e8.png": "/swapi-db/static/media/logo.1b3980e8.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f959e4c0.js",
+    "static/js/2.5cadc64f.chunk.js",
+    "static/js/main.5d877f2e.chunk.js"
+  ]
+}
