@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/swapi-db/static/js/main.5d877f2e.chunk.js",
-    "main.js.map": "/swapi-db/static/js/main.5d877f2e.chunk.js.map",
+    "main.js": "/swapi-db/static/js/main.5079ad1d.chunk.js",
+    "main.js.map": "/swapi-db/static/js/main.5079ad1d.chunk.js.map",
     "runtime-main.js": "/swapi-db/static/js/runtime-main.f959e4c0.js",
     "runtime-main.js.map": "/swapi-db/static/js/runtime-main.f959e4c0.js.map",
     "static/js/2.5cadc64f.chunk.js": "/swapi-db/static/js/2.5cadc64f.chunk.js",
@@ -19,6 +19,6 @@
   "entrypoints": [
     "static/js/runtime-main.f959e4c0.js",
     "static/js/2.5cadc64f.chunk.js",
-    "static/js/main.5d877f2e.chunk.js"
+    "static/js/main.5079ad1d.chunk.js"
   ]
 }
