@@ -5,7 +5,7 @@ export default function Person(props: any) {
     return (
         <PersonContainer key={id}>
             <div ref={reference} key={id}>
-                <img key={id + 'img'} src={image} alt="" />
+                <img key={id + 'img'} src={image} alt="jedi" />
                 <p key={id + 'name'}>{name}</p>
             </div>
         </PersonContainer>

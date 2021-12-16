@@ -1,4 +1,4 @@
-export interface FilmsResults {
+export interface FilmType {
     characters: string[],
     created: string,
     director: string,
@@ -14,7 +14,6 @@ export interface FilmsResults {
     url: string,
     vehicles: string[]
 }
-
 export interface PersonType {
     birth_year: string;
     eye_color: string;
@@ -32,13 +31,32 @@ export interface PersonType {
     starships: string[]
     url: string;
     vehicles: string[]
+    img?: string,
+}
+
+export interface ResultObject {
+    description: string;
+    properties: FilmType;
+    uid: string;
+    __v: number;
+    _id: string;
 }
 export interface Response {
     config: object,
     data: {
-        count: number,
-        next?: null | string,
-        previous?: null | string,
-        results: any,
+        message: string,
+        result: ResultObject[]
     }
+}
+export interface FilmState {
+    pending: boolean,
+    error: string | null,
+    films: FilmType[] | [], 
+}
+export interface PeopleState {
+    pending: boolean,
+    error: string | null,
+    people: PersonType[] | [],
+    person: PersonType | {},
+    next: string,
 }

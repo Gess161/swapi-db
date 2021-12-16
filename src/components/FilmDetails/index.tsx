@@ -1,15 +1,16 @@
-import { useEffect, useState, Suspense } from "react";
+import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks";
-import { Container } from "./styles";
+import { Container } from "./styled";
 import getPeopleId from "../../services/getPeopleId";
 import fetchPeopleById from "../../services/api/fetchPeopleById";
 import getId from "../../services/getId";
 import getImageUrl from "../../services/getUrlArray";
 import Person from "../Person";
-import { PersonContainer } from "../Person/styled";
 import LoadingComponent from "../Loading";
 import { fetchFilmsRequest } from "../../redux/actions/filmsActions";
-import AboutFilm from "./AboutFilm";
+import AboutFilm from "./AboutFilm/index";
+import { FilmType } from "../../types";
+import PeopleContainer from "../People/styled";
 interface PersonInterface {
     name: string,
     id: string,
@@ -20,50 +21,46 @@ export default function FilmDetailsComponent(props: any) {
     const initialState: PersonInterface[] = [];
     const dispatch = useAppDispatch()
     const [people, setPeople] = useState(initialState)
-    const film: any = useAppSelector(state => state.rootReducer.filmsReducer.film)
+    const films: FilmType[] = useAppSelector(state => state.rootReducer.filmsReducer.films)
     const { filmId } = props.params;
 
     useEffect(() => {
-        if (Object.keys(film).length === 0) {
-            dispatch(fetchFilmsRequest(''))
+        if (films.length > 0) {
+            const charactersUrlList = films[filmId - 1].characters
+            const idList = getPeopleId(charactersUrlList);
+            (async () => {
+                const response = await fetchPeopleById(idList)
+                const peopleList = response.map(({ name, url }) => {
+                    const id = getId(url);
+                    const image = getImageUrl(id)
+                    return {
+                        id,
+                        name,
+                        image
+                    }
+                })
+                setPeople(peopleList)
+            })()
+        } else {
+            dispatch((fetchFilmsRequest('')))
         }
         // eslint-disable-next-line
-    }, [film])
-
-    useEffect(() => {
-        const charactersUrlList = film[filmId].characters
-        const idList = getPeopleId(charactersUrlList);
-        (async () => {
-            const response = await fetchPeopleById(idList)
-            const peopleList = response.map(({ name, url }) => {
-                const id = getId(url);
-                const image = getImageUrl(id)
-                return {
-                    id,
-                    name,
-                    image
-                }
-            })
-            setPeople(peopleList)
-        })()
-        // eslint-disable-next-line
-    }, [])
+    }, [films])
 
     return (
         <Container>
-            <AboutFilm
-                filmId={filmId}
-                film={film}
-            />
-            <Suspense fallback={<LoadingComponent />}>
-                <PersonContainer>
-                    {people.length > 0 ? Object.values(people).map((person) => {
-                        return (
-                            <Person key={person.id} name={person.name} id={person.id} image={person.image} />
-                        )
-                    }) : <LoadingComponent />}
-                </PersonContainer>
-            </Suspense>
+            {films.length > 0 ?
+                <AboutFilm
+                    filmId={filmId}
+                    film={films[filmId - 1]}
+                /> : null}
+            <PeopleContainer>
+                {people.length > 0 ? Object.values(people).map((person) => {
+                    return (
+                        <Person key={person.id} name={person.name} id={person.id} image={person.image} />
+                    )
+                }) : <LoadingComponent />}
+            </PeopleContainer>
         </Container>
     )
 }

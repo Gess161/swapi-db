@@ -1,24 +1,16 @@
 import { AnyAction } from "redux";
 import { FETCH_PEOPLE_FAILURE, FETCH_PEOPLE_SUCCES, FETCH_PEOPLE_REQUEST } from "../../constants";
-import { PersonType } from "../../types"
-
-interface PeopleState {
-    pending: boolean,
-    error: string | null,
-    people: Array<PersonType>,
-    person: PersonType | null,
-    next: string | null,
-}
+import { PeopleState } from "../../types"
 
 const initialState: PeopleState = {
     pending: false,
     error: null,
     people: [],
-    person: null,
+    person: {},
     next: ""
 }
 
-export default function peopleReducer(state = initialState, action: AnyAction) {
+export default function peopleReducer(state = initialState, action: AnyAction): PeopleState {
     switch (action.type) {
         case FETCH_PEOPLE_REQUEST:
             return {
@@ -37,7 +29,6 @@ export default function peopleReducer(state = initialState, action: AnyAction) {
             return {
                 ...state,
                 pending: false,
-                people: [],
                 error: action.payload.error
             }
         default: {

@@ -3,6 +3,6 @@ import filmsReducer from "./filmsReducer";
 import peopleReducer from "./peopleReducer";
 
 export default combineReducers({
-    filmsReducer,
-    peopleReducer
+    peopleReducer,
+    filmsReducer
 })

@@ -1,44 +1,31 @@
 import { AnyAction } from "redux";
 import { FETCH_FILMS_FAILURE, FETCH_FILMS_SUCCES, FETCH_FILMS_REQUEST } from "../../constants"
-import parseFilms from "../../services/parseFilms"
+import { FilmState } from "../../types";
 
-interface FilmsState {
-    pending: boolean,
-    error: string | null,
-    films: Array<any>
-    film: {},
-    next: string | null
-}
-
-const initialState: FilmsState = {
+const initialState: FilmState = {
     pending: false,
-    error: null,
+    error: "",
     films: [],
-    film: {},
-    next: ""
-}
+};
 
-export default function filmsReducer(state = initialState, action: AnyAction) {
-    switch (action.type){
+export default function filmsReducer(state = initialState, action: AnyAction): FilmState {
+    switch (action.type) {
         case FETCH_FILMS_REQUEST:
             return {
                 ...state,
                 pending: true,
             }
         case FETCH_FILMS_SUCCES:
-            const films = action.payload.map((film: any) => film)
             return {
                 ...state,
                 pending: false,
                 films: action.payload,
-                film: parseFilms(films),
                 error: null
             }
         case FETCH_FILMS_FAILURE:
             return {
                 ...state,
                 pending: false,
-                films: [],
                 error: action.payload.error
             }
         default: {

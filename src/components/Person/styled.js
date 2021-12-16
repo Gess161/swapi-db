@@ -11,11 +11,19 @@ export const PersonContainer = styled.div`
         flex-direction: column;
     }
     p {
+        font-size: 22px;
         justify-content: center;
         display: flex;
+        padding: 5px;
     }
     img {
         border-radius: 15px;
         display: flex;
+    }
+
+    @media(max-width: 400px){
+        img {
+            width: 100%;
+        }
     }
 `
