@@ -7,7 +7,7 @@ import getImageUrl from "../../services/getUrlArray"
 import { PersonType } from "../../types"
 import { Loading } from "../Loading/styled"
 import Person from "../Person"
-import PeopleContainer  from "./styled"
+import PeopleContainer from "./styled"
 
 export default function People() {
     const state = useAppSelector(state => state.rootReducer.peopleReducer)
@@ -20,7 +20,7 @@ export default function People() {
     }
 
     useEffect(() => {
-            fetchData()
+        fetchData()
         // eslint-disable-next-line
     }, [])
 
@@ -31,6 +31,7 @@ export default function People() {
             loader={<Loading />}
             next={fetchData}
         >
+            {people.length > 0 ? 
             <PeopleContainer>
                 {people.map((person: PersonType, index: number) => {
                     if (people.length === index + 1) {
@@ -39,7 +40,8 @@ export default function People() {
                         return <Person key={person.name} name={person.name} image={getImageUrl(getId(person.url))} />
                     }
                 })}
-            </PeopleContainer>
+            </PeopleContainer> : <Loading />}
+
         </InfiniteScroll>
     )
 }

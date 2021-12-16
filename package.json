@@ -1,7 +1,8 @@
 {
   "name": "swapi-db",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
+  "homepage": "https://gess161.github.io/swapi-db/",
   "dependencies": {
     "@babel/preset-typescript": "^7.16.0",
     "@reduxjs/toolkit": "^1.6.2",
@@ -33,7 +34,9 @@
     "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
   },
   "eslintConfig": {
     "extends": [
