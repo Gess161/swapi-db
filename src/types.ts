@@ -45,7 +45,7 @@ export interface Response {
     config: object,
     data: {
         message: string,
-        result: ResultObject[]
+        results: FilmType[]
     }
 }
 export interface FilmState {
@@ -57,6 +57,6 @@ export interface PeopleState {
     pending: boolean,
     error: string | null,
     people: PersonType[] | [],
-    person: PersonType | {},
+    person?: PersonType,
     next: string,
 }

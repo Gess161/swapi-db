@@ -6,6 +6,8 @@ export const FETCH_PEOPLE_REQUEST = "FETCH_PEOPLE_REQUEST"
 export const FETCH_PEOPLE_SUCCES = "FETCH_PEOPLE_SUCCES"
 export const FETCH_PEOPLE_FAILURE = "FETCH_PEOPLE_FAILURE"
 
+export const SET_PERSON = "SET_PERSON"
+
 export const IMG_URL_EXTENTION=".jpg"
 export const FILMS_URL_EXTENTION="films"
 export const PEOPLE_URL_EXTENTION="people"
