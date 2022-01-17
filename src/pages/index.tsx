@@ -5,6 +5,7 @@ import People from "./people";
 import Home from "./home";
 import Layout from "../components/Layout"
 import Film from "./film";
+import Person from "./person";
 
 export default function Router() {
     return (
@@ -15,6 +16,7 @@ export default function Router() {
                 <Route path="films" element={<Films />} />
                 <Route path="film/:filmId" element={<Film />} />
                 <Route path="people" element={<People />} />
+                <Route path="people/:id" element={<Person />} />
                 <Route path="*" element={<NotFound />} />
             </Route>
         </Routes>

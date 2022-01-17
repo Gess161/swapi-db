@@ -14,6 +14,7 @@ export default function People() {
     const people = state.people
     const dispatch = useAppDispatch()
     const url: string = state.next
+    console.log(people)
 
     const fetchData = () => {
         dispatch(fetchPeopleRequest(url))
@@ -31,16 +32,16 @@ export default function People() {
             loader={<Loading />}
             next={fetchData}
         >
-            {people.length > 0 ? 
-            <PeopleContainer>
-                {people.map((person: PersonType, index: number) => {
-                    if (people.length === index + 1) {
-                        return <Person key={person.name} name={person.name} image={getImageUrl(getId(person.url))} />
-                    } else {
-                        return <Person key={person.name} name={person.name} image={getImageUrl(getId(person.url))} />
-                    }
-                })}
-            </PeopleContainer> : <Loading />}
+            {people.length > 0 ?
+                <PeopleContainer>
+                    {people.map((person: PersonType, index: number) => {
+                        if (people.length === index + 1) {
+                            return <Person key={person.name} name={person.name} id={getId(person.url)} image={getImageUrl(getId(person.url))} />
+                        } else {
+                            return <Person key={person.name} name={person.name} id={getId(person.url)} image={getImageUrl(getId(person.url))} />
+                        }
+                    })}
+                </PeopleContainer> : <Loading />}
 
         </InfiniteScroll>
     )
