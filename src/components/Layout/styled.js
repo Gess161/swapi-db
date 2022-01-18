@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import bgLight from "../../assets/images/light-bg.png"
 
 export const Wrapper = styled.div`
     display: flex;

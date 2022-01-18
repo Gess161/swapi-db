@@ -7,6 +7,7 @@ export const PersonContainer = styled.div`
     background-color: white;
     margin: 0 auto;
     flex-direction: row;
+    border-radius: 2px;
 
     img {
         width: 23%;

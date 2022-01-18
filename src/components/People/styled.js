@@ -6,7 +6,7 @@ const PeopleContainer = styled.div`
     margin: 0 auto;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
 `
 
 export default PeopleContainer;

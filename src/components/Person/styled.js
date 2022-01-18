@@ -3,25 +3,50 @@ import styled from "styled-components";
 export const PersonContainer = styled.div`
 
     display: flex;
-    margin: 0 auto;
-    padding: 10px;
+    width: 20%;
+    height: 32vw;
+    justify-content: center;
+    padding: 5px;
+
 
     div {
         display: flex;
         flex-direction: column;
     }
     p {
-        font-size: 22px;
+        color: grey;
+        font-size: 1rem;
         justify-content: center;
+        align-items: center;
         display: flex;
-        padding: 5px;
+        background-color: white;
+        height: 25%;
+        width: 100%
+        border-radius: 0 0 2px 2px;
     }
     img {
-        border-radius: 15px;
+        border-radius: 2px 2px 0 0;
+        object-fit: fill;
+        height: 75%;
         display: flex;
     }
+    @media(max-width: 800px){
+        width: 33%;
+        height: 60vw;
+        p {
+            font-size: 1rem;
+        }
+        img {
+            width: 100%;
+        }
+    }
 
-    @media(max-width: 400px){
+    @media(max-width: 450px){
+        width: 50%;
+        height: 80vw;
+        p {
+            font-size: 0.65rem;
+        }
         img {
             width: 100%;
         }
