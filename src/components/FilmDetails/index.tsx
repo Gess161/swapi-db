@@ -42,7 +42,7 @@ export default function FilmDetailsComponent(props: any) {
                 setPeople(peopleList)
             })()
         } else {
-            dispatch((fetchFilmsRequest('')))
+            dispatch((fetchFilmsRequest("")))
         }
     }, [films, filmId, dispatch])
 
@@ -53,6 +53,7 @@ export default function FilmDetailsComponent(props: any) {
                     filmId={filmId}
                     film={films[filmId - 1]}
                 /> : null}
+            <div>
             <PeopleContainer>
                 {people.length > 0 ? Object.values(people).map((person) => {
                     return (
@@ -60,6 +61,7 @@ export default function FilmDetailsComponent(props: any) {
                     )
                 }) : <LoadingComponent />}
             </PeopleContainer>
+            </div>
         </Container>
     )
 }

@@ -6,6 +6,7 @@ import Home from "./home";
 import Layout from "../components/Layout"
 import Film from "./film";
 import Person from "./person";
+import StarrySky from "../components/Background/";
 
 export default function Router() {
     return (

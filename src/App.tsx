@@ -3,7 +3,7 @@ import GlobalStyles from "./assets/global.styled";
 import { ThemeProvider } from "styled-components";
 
 const theme = {
-
+  // add theming
 }
 
 export default function App() {

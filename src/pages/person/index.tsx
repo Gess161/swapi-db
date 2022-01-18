@@ -20,8 +20,6 @@ export default function PersonPage() {
         getPerson()
     },[])
     return (
-        <div>
-            {person ? <PersonDetails person={person} id={id} />: <LoadingComponent />}
-        </div>
+        person ? <PersonDetails person={person} id={id} />: <LoadingComponent />
     )
 }

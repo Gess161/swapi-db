@@ -6,6 +6,7 @@ import FilmComponent from "../Film";
 import { useNavigate } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import LoadingComponent from "../Loading";
+import logo from "../../assets/images/logo.png"
 
 export default function FilmsComponent() {
     const dispatch = useAppDispatch()
@@ -20,9 +21,11 @@ export default function FilmsComponent() {
         }
         // eslint-disable-next-line
     }, [])
-
     return (
         <Container>
+            <div className="logo-container">
+                <img className="logo" alt="logo" src={logo} />
+            </div>
             {films.length > 0 ? films.map((film: any) => {
                 return <FilmComponent
                     navigate={navigate}
