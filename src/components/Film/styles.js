@@ -3,9 +3,9 @@ import styled from "styled-components"
 export const Container = styled.div`
     flex-direction: column;
     display: flex;
-    width: 30%;
+    width: 32%;
     height: 100%;
-    margin: 20px auto;
+    margin: 5px;
     justify-content: center;
     align-items: center;
     background-color: white;
@@ -19,8 +19,8 @@ export const Container = styled.div`
     }
     p {
         color: grey;
-        font-size: 0.85rem;
-        padding: 5vw;
+        font-size: 1rem;
+        padding: 3vw;
         justify-content: center;
         align-items: center;
         display: flex;

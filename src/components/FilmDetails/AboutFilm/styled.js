@@ -1,16 +1,14 @@
 import styled from "styled-components"
 
 export const AboutFilmContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 85%;
-    height: 400px;
-    padding: 5px;
-    margin: 20px auto;
-    background-color: white;
-
-    * {
-        padding: 5px;
+    .container {
+        display: flex;
+        flex-direction: column;
+        width: calc(100% - 10px);
+        height: 100%;
+        margin: 0 auto 20px;
+        background-color: white;
+        padding: 30px;
     }
     
 `

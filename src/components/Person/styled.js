@@ -1,17 +1,17 @@
 import styled from "styled-components";
 
 export const PersonContainer = styled.div`
-
     display: flex;
-    width: 20%;
+    width: 25%;
     height: 32vw;
     justify-content: center;
     padding: 5px;
 
-
     div {
         display: flex;
         flex-direction: column;
+        width: 100%;
+        height: 100%;
     }
     p {
         color: grey;
@@ -20,7 +20,7 @@ export const PersonContainer = styled.div`
         align-items: center;
         display: flex;
         background-color: white;
-        height: 25%;
+        height: 15%;
         width: 100%
         border-radius: 0 0 2px 2px;
     }

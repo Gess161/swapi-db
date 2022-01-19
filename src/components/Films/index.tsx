@@ -23,7 +23,7 @@ export default function FilmsComponent() {
     }, [])
     return (
         <Container>
-            <div className="logo-container">
+            <div>
                 <img className="logo" alt="logo" src={logo} />
             </div>
             {films.length > 0 ? films.map((film: any) => {
