@@ -2,14 +2,21 @@ import styled from "styled-components";
 
 export const PersonContainer = styled.div`
     display: flex;
+    flex-direction: column;
     width: 80%;
-    height: 30%;
-    background-color: white;
     margin: 0 auto;
-    flex-direction: row;
-    border-radius: 2px;
 
-    img {
+    .info {
+        width: 100%;
+        height: 30%;
+        background-color: white;
+        margin: 0 auto;
+        flex-direction: row;
+        border-radius: 2px;
+        display: flex;
+    }
+
+    .person {
         width: 23%;
         height: 300px;
         object-fit: cover;
@@ -17,14 +24,14 @@ export const PersonContainer = styled.div`
     }
 
     h1 {
-        padding: 10% 0 0 30%;
         font-size: 24px;
         font-weight: 600;
         color: black;
+        padding: 20px;
     }
 
     ul {
-        padding: 5% 0 0 30%;
+        padding: 10px 20px 20px 20px;
     }
     li {
         padding: 1.5px;

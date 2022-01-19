@@ -1,10 +1,8 @@
-import * as React from "react"
-import Person from "../Person";
-import { useAppDispatch, useAppSelector } from "../../hooks";
-import { setPerson } from "../../redux/actions/peopleActions";
-import fetchPersonById from "../../services/api/fetchPersonById";
+import { useAppSelector } from "../../hooks";
 import { PersonType } from "../../types";
 import { PersonContainer } from "../PersonDetails/styled";
+import logo from "../../assets/images/logo.png"
+import Navigation from "../Navigation";
 
 export default function PersonDetails(props: { id: string | undefined, person: PersonType }) {
     const { id } = props;
@@ -31,19 +29,23 @@ export default function PersonDetails(props: { id: string | undefined, person: P
 
     return (
         <PersonContainer>
-            <img src={img} />
-            <div>
-                <h1>{name}</h1>
+            <img className="logo" alt="logo" src={logo} />
+            <Navigation person={name} />
+            <div className="info">
+                <img src={img} alt="character" className="person" />
                 <div>
-                    <ul>
-                        <li>Birth Year: {birth_year}</li>
-                        <li>Height: {height}</li>
-                        <li>Mass: {mass}</li>
-                        <li>Gender: {gender}</li>
-                        <li>Eye color: {eye_color}</li>
-                        <li>Hair color: {hair_color}</li>
-                        <li>Skin color: {skin_color}</li>
-                    </ul>
+                    <h1>{name}</h1>
+                    <div>
+                        <ul>
+                            <li>Birth Year: {birth_year}</li>
+                            <li>Height: {height}</li>
+                            <li>Mass: {mass}</li>
+                            <li>Gender: {gender}</li>
+                            <li>Eye color: {eye_color}</li>
+                            <li>Hair color: {hair_color}</li>
+                            <li>Skin color: {skin_color}</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </PersonContainer>

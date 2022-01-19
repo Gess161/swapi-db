@@ -53,15 +53,13 @@ export default function FilmDetailsComponent(props: any) {
                     filmId={filmId}
                     film={films[filmId - 1]}
                 /> : null}
-            <div>
-            <PeopleContainer>
-                {people.length > 0 ? Object.values(people).map((person) => {
-                    return (
-                        <Person key={person.id} name={person.name} id={person.id} image={person.image} />
-                    )
-                }) : <LoadingComponent />}
-            </PeopleContainer>
-            </div>
+                <PeopleContainer className="people">
+                    {people.length > 0 ? Object.values(people).map((person) => {
+                        return (
+                            <Person key={person.id} name={person.name} id={person.id} image={person.image} />
+                        )
+                    }) : <LoadingComponent />}
+                </PeopleContainer>
         </Container>
     )
 }
