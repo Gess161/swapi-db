@@ -10,20 +10,12 @@ export default function PersonDetails(props: { id: string | undefined, person: P
     const {
         birth_year,
         eye_color,
-        films,
         gender,
         hair_color,
         height,
-        homeworld,
         mass,
         name,
         skin_color,
-        createdDate,
-        editedDate,
-        species,
-        starships,
-        url,
-        vehicles,
     } = person;
     const img = `${process.env.REACT_APP_IMG_API_URL}${id}.jpg`
 

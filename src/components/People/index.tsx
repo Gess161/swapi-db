@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from "../../hooks"
 import { fetchPeopleRequest } from "../../redux/actions/peopleActions"
 import getId from "../../services/getId"
 import getImageUrl from "../../services/getUrlArray"
-import { PersonType } from "../../types"
+import { PeopleState, PersonType } from "../../types"
 import { Loading } from "../Loading/styled"
 import Person from "../Person"
 import PeopleContainer from "./styled"
@@ -12,8 +12,8 @@ import logo from "../../assets/images/logo.png"
 import Navigation from "../Navigation"
 
 export default function People() {
-    const state = useAppSelector(state => state.rootReducer.peopleReducer)
-    const people = state.people
+    const state: PeopleState = useAppSelector(state => state.rootReducer.peopleReducer)
+    const people: PersonType[] = state.people
     const dispatch = useAppDispatch()
     const url: string = state.next
 

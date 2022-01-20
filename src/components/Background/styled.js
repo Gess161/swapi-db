@@ -8,7 +8,6 @@ export const Stars = styled.div`
     position: relative;
 }
 `
-
 export const Twinkle = styled.div`
     background: transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
     z-index:-1;

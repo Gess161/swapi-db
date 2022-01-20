@@ -18,6 +18,7 @@ export default function PersonPage() {
     }
     React.useEffect(() => {
         getPerson()
+        // eslint-disable-next-line
     },[])
     return (
         person ? <PersonDetails person={person} id={id} />: <LoadingComponent />

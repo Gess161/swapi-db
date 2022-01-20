@@ -1,7 +1,6 @@
 import { Container } from "./styled";
 import logo from "../../assets/images/logo.png"
 import { useNavigate } from "react-router-dom";
-import Navigation from "../Navigation";
 
 export default function HomeComponent() {
     const navigate = useNavigate()
@@ -10,7 +9,7 @@ export default function HomeComponent() {
             <div className="logo-container">
                 <img className="logo" alt="logo" src={logo} />
             </div>
-            <div className="body">
+            <div className="home">
                 <div className="container" onClick={() => navigate("/people")}>
                     <img alt="characters" src="https://starwars-visualguide.com/assets/img/categories/character.jpg" />
                     <p>
@@ -24,7 +23,6 @@ export default function HomeComponent() {
                     </p>
                 </div>
             </div>
-
         </Container>
     )
 }

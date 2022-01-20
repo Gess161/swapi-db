@@ -22,6 +22,7 @@ export const NavigationContainer = styled.nav`
         font-weight: 600;
         letter-spacing: 0.4rem;
         color: white;
+        text-decoration: none;
     }
 
 `

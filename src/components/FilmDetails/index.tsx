@@ -11,6 +11,7 @@ import { fetchFilmsRequest } from "../../redux/actions/filmsActions";
 import AboutFilm from "./AboutFilm/index";
 import { FilmType } from "../../types";
 import PeopleContainer from "../People/styled";
+import { useLocation } from "react-router-dom";
 interface PersonInterface {
     name: string,
     id: string,
@@ -46,6 +47,7 @@ export default function FilmDetailsComponent(props: any) {
         }
     }, [films, filmId, dispatch])
 
+    console.log(useLocation())
     return (
         <Container>
             {films.length > 0 ?

@@ -10,7 +10,7 @@ export const PersonContainer = styled.div`
         width: 100%;
         height: 30%;
         background-color: white;
-        margin: 0 auto;
+        margin: 5px auto;
         flex-direction: row;
         border-radius: 2px;
         display: flex;
@@ -21,6 +21,9 @@ export const PersonContainer = styled.div`
         height: 300px;
         object-fit: cover;
         object-position: center 20%;
+        @media(max-width: 800px){
+            width: 35%;
+        }
     }
 
     h1 {

@@ -8,19 +8,27 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
 
-    .body {
+    .home {
         margin-top: 16px;
         display: flex;
         flex-direction: row;
         width: 80%;
-        height: 40%;
+        height: 100%;
         justify-content: space-between;
+        @media(max-width: 1140px){
+            flex-direction: column;
+            align-items: center;
+        }
         .container {
             display: flex;
-            height: 80%;
-            width: 40%;
+            height: 100%;
+            width: 45%;
             flex-direction: column;
-
+            border-radius: 2px;
+            @media(max-width: 1140px){
+                width: 100%;
+                margin-bottom: 20px;
+            }
             p {
                 display: flex;
                 align-items: center;
@@ -32,7 +40,8 @@ export const Container = styled.div`
             }
         }
         img {
-            width: 100%
+            height: 100%;
+            width: 100%;
         }
     }
 `

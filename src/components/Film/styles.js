@@ -8,7 +8,6 @@ export const Container = styled.div`
     margin: 5px;
     justify-content: center;
     align-items: center;
-    background-color: white;
     border-radius: 2px;
 
     img {
@@ -17,6 +16,7 @@ export const Container = styled.div`
         width: 100%;
         border-radius: 2px 2px 0 0;
     }
+    
     p {
         color: grey;
         font-size: 1rem;
@@ -26,7 +26,7 @@ export const Container = styled.div`
         display: flex;
         background-color: white;
         height: 25%;
-        width: 100%
+        width: 100%;
         border-radius: 0 0 2px 2px;
     }
 

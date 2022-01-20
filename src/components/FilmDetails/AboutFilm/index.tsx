@@ -9,7 +9,7 @@ export default function AboutFilm(props: any) {
     return (
         <AboutFilmContainer>
             <img className="logo" alt="logo" src={logo} />
-            <Navigation title={title} id={filmId}/>
+            <Navigation title={title} isFilm={true} id={filmId}/>
             <div className="container">
                 <h1>{title && title}</h1>
                 <h3>Episode {filmId}</h3>
