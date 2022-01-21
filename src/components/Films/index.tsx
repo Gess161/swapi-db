@@ -1,42 +1,32 @@
 import { Container } from "./styled";
-import { useAppSelector, useAppDispatch } from "../../hooks";
-import { useEffect } from "react";
-import { fetchFilmsRequest } from "../../redux/actions/filmsActions";
 import FilmComponent from "../Film";
-import { useNavigate } from "react-router-dom";
+import { NavigateFunction } from "react-router-dom";
 import { Outlet } from "react-router-dom";
-import LoadingComponent from "../Loading";
+import { Loading } from "../Loading";
 import logo from "../../assets/images/logo.png"
 import Navigation from "../Navigation";
+import { FilmType } from "../../types";
 
-export default function FilmsComponent(props: any) {
-    const dispatch = useAppDispatch()
-    const state = useAppSelector(state => state.rootReducer.filmsReducer)
-    const films = state.films
-    const navigate = useNavigate()
+interface IFilms {
+    navigate: NavigateFunction,
+    films: FilmType[],
+}
 
-    useEffect(() => {
-        if (films.length < 1) {
-            dispatch(fetchFilmsRequest(''))
-        }
-    }, [dispatch])
-    
+export default function FilmsComponent(props: IFilms) {
+    const { films, navigate } = props;
+
     return (
         <Container>
-            <div>
-                <img className="logo" alt="logo" src={logo} />
-            </div>
-            <div className="block">
-                <Navigation isFilm={true} />
-            </div>
-            {films.length > 0 ? films.map((film: any) => {
+            <img className="logo" alt="logo" src={logo} />
+            <Navigation isFilm={true} />
+            {films.length > 0 ? films.map((film: FilmType) => {
                 return <FilmComponent
                     navigate={navigate}
                     episode={film.episode_id}
                     key={film.title}
                     title={film.title}
                 />
-            }) : <LoadingComponent />}
+            }) : <Loading data-testid="loader"/>}
             <Outlet />
         </Container>
     )

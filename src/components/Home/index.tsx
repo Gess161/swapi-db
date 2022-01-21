@@ -1,9 +1,13 @@
 import { Container } from "./styled";
 import logo from "../../assets/images/logo.png"
-import { useNavigate } from "react-router-dom";
+import { NavigateFunction } from "react-router-dom";
 
-export default function HomeComponent() {
-    const navigate = useNavigate()
+interface IHome {
+    navigate: NavigateFunction,
+}
+
+export default function HomeComponent(props: IHome) {
+    const { navigate } = props;
     return (
         <Container>
             <div className="logo-container">

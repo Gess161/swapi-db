@@ -1,12 +1,16 @@
-import { useAppSelector } from "../../hooks";
+
 import { PersonType } from "../../types";
 import { PersonContainer } from "../PersonDetails/styled";
 import logo from "../../assets/images/logo.png"
 import Navigation from "../Navigation";
 
-export default function PersonDetails(props: { id: string | undefined, person: PersonType }) {
-    const { id } = props;
-    const person: any = useAppSelector(state => state.rootReducer.peopleReducer.person)
+interface IPersonDetails {
+    id: string | undefined;
+    person: PersonType
+}
+
+export default function PersonDetails(props: IPersonDetails) {
+    const { id, person } = props;
     const {
         birth_year,
         eye_color,

@@ -1,31 +1,23 @@
-import { useEffect } from "react"
 import InfiniteScroll from "react-infinite-scroll-component"
-import { useAppDispatch, useAppSelector } from "../../hooks"
-import { fetchPeopleRequest } from "../../redux/actions/peopleActions"
 import getId from "../../services/getId"
 import getImageUrl from "../../services/getUrlArray"
-import { PeopleState, PersonType } from "../../types"
-import { Loading } from "../Loading/styled"
-import Person from "../Person"
+import { PersonType } from "../../types"
+import { Loading } from "../Loading"
+import PeopleItem from "../PeopleItem"
 import PeopleContainer from "./styled"
 import logo from "../../assets/images/logo.png"
 import Navigation from "../Navigation"
+import { NavigateFunction } from "react-router-dom"
 
-export default function People() {
-    const state: PeopleState = useAppSelector(state => state.rootReducer.peopleReducer)
-    const people: PersonType[] = state.people
-    const dispatch = useAppDispatch()
-    const url: string = state.next
+interface IPeople {
+    people: PersonType[],
+    url: string,
+    fetchData: () => void,
+    navigate: NavigateFunction,
+}
 
-    const fetchData = () => {
-        dispatch(fetchPeopleRequest(url))
-    }
-
-    useEffect(() => {
-        fetchData()
-        // eslint-disable-next-line
-    }, [])
-
+export default function People(props: IPeople) {
+    const { people , url, fetchData, navigate } = props;
     return (
         <InfiniteScroll
             dataLength={people.length}
@@ -34,21 +26,17 @@ export default function People() {
             next={fetchData}
         >
             {people.length > 0 ?
-                <PeopleContainer>
-                    <div>
-                        <img className="logo" alt="logo" src={logo} />
-                    </div>
-                    <div className="block">
-                        <Navigation />
-                    </div>
+                <PeopleContainer data-testid="container">
+                    <img className="logo" alt="logo" src={logo} />
+                    <Navigation />
                     {people.map((person: PersonType, index: number) => {
                         if (people.length === index + 1) {
-                            return <Person key={person.name} name={person.name} id={getId(person.url)} image={getImageUrl(getId(person.url))} />
+                            return <PeopleItem navigate={navigate} key={person.name} name={person.name} id={getId(person.url)} image={getImageUrl(getId(person.url))} />
                         } else {
-                            return <Person key={person.name} name={person.name} id={getId(person.url)} image={getImageUrl(getId(person.url))} />
+                            return <PeopleItem navigate={navigate} key={person.name} name={person.name} id={getId(person.url)} image={getImageUrl(getId(person.url))} />
                         }
                     })}
-                </PeopleContainer> : <Loading />}
+                </PeopleContainer> : <Loading data-testid="loader"/>}
 
         </InfiniteScroll>
     )
