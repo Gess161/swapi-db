@@ -1,4 +1,3 @@
-import React from "react";
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter, useNavigate } from "react-router-dom";
 import PeopleItem from ".";

@@ -31,9 +31,9 @@ export default function People(props: IPeople) {
                     <Navigation />
                     {people.map((person: PersonType, index: number) => {
                         if (people.length === index + 1) {
-                            return <PeopleItem navigate={navigate} key={person.name} name={person.name} id={getId(person.url)} image={getImageUrl(getId(person.url))} />
+                            return <PeopleItem navigate={navigate} key={person.name} name={person.name} id={getId(person.url)} image={getImageUrl(getId(person.url))}/>
                         } else {
-                            return <PeopleItem navigate={navigate} key={person.name} name={person.name} id={getId(person.url)} image={getImageUrl(getId(person.url))} />
+                            return <PeopleItem navigate={navigate} key={person.name} name={person.name} id={getId(person.url)} image={getImageUrl(getId(person.url))}/>
                         }
                     })}
                 </PeopleContainer> : <Loading data-testid="loader"/>}

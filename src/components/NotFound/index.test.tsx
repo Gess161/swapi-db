@@ -10,7 +10,6 @@ describe("Not Found", () => {
                 <NotFoundComponent />
             </BrowserRouter>
         )
-
         expect(screen.getByText("Return to Homepage")).toBeInTheDocument();
     })
 })

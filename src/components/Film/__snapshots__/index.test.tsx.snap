@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders film card with title "Test" 1`] = `
+<div
+  className="sc-bdvvtL hcjCMW"
+  onClick={[Function]}
+>
+  <img
+    alt="film"
+    src="https://starwars-visualguide.com/assets/img/films/4.jpg"
+  />
+  <p>
+     
+    Test
+     
+  </p>
+</div>
+`;

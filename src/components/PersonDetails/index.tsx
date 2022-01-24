@@ -5,7 +5,7 @@ import logo from "../../assets/images/logo.png"
 import Navigation from "../Navigation";
 
 interface IPersonDetails {
-    id: string | undefined;
+    id?: string;
     person: PersonType
 }
 
@@ -27,7 +27,7 @@ export default function PersonDetails(props: IPersonDetails) {
         <PersonContainer>
             <img className="logo" alt="logo" src={logo} />
             <Navigation person={name} />
-            <div className="info">
+            <div className="info" data-testid="info">
                 <img src={img} alt="character" className="person" />
                 <div>
                     <h1>{name}</h1>

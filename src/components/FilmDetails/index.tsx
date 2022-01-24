@@ -31,7 +31,7 @@ export default function FilmDetailsComponent(props: IFilmDetails) {
             <PeopleContainer className="people">
                 {people.length > 0 ? Object.values(people).map((person) => {
                     return (
-                        <PeopleItem navigate={navigate} key={person.id} name={person.name} id={person.id} image={person.image} />
+                        <PeopleItem navigate={navigate} key={person.name} name={person.name} id={person.id} image={person.image} />
                     )
                 }) : <Loading data-testid="loader" />}
             </PeopleContainer>

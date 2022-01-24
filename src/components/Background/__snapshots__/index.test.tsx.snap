@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders stars background with twinkling animation" 1`] = `
+<div
+  className="sc-dkPtRN jEdA-dV"
+>
+  <div
+    className="sc-bdvvtL gwERyl"
+  />
+  <div
+    className="sc-gsDKAQ exBuuV"
+  />
+</div>
+`;
