@@ -5,6 +5,7 @@ import AboutFilm from "./AboutFilm/index";
 import PeopleContainer from "../People/styled";
 import { FilmType } from "../../types";
 import { NavigateFunction } from "react-router-dom";
+import logo from "../../assets/images/logo.png"
 
 interface IPerson {
     name: string,
@@ -23,6 +24,7 @@ export default function FilmDetailsComponent(props: IFilmDetails) {
     const { episode, films, people, navigate } = props
     return (
         <Container>
+            <img className="logo" alt="logo" src={logo} />
             {films.length > 0 ?
                 <AboutFilm
                     episode={episode}

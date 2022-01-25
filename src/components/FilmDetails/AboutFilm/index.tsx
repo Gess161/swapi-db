@@ -14,7 +14,6 @@ export default function AboutFilm(props: IAboutFilm) {
 
     return (
         <AboutFilmContainer>
-            <img className="logo" alt="logo" src={logo} />
             <Navigation title={title} isFilm={true} />
             <div className="container">
                 <h1>{title && title}</h1>
