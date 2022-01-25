@@ -8,5 +8,6 @@ export const Container = styled.div`
         width: 100%;
         flex-direction: row;
         flex-wrap: wrap;
+        justify-content: space-around;
     }
 `
