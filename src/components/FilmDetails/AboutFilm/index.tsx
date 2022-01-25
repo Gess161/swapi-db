@@ -1,6 +1,5 @@
 import Navigation from "../../Navigation"
 import { AboutFilmContainer } from "./styled"
-import logo from "../../../assets/images/logo.png"
 import { FilmType } from "../../../types"
 
 interface IAboutFilm {

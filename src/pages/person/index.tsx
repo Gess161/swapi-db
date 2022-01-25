@@ -7,7 +7,6 @@ import { PersonType } from "../../types";
 import fetchPersonById from "../../services/api/fetchPersonById";
 import { Loading } from "../../components/Loading";
 import logo from "../../assets/images/logo.png"
-import Navigation from "../../components/Navigation";
 import { Container } from "./styled";
 
 export default function PersonPage() {
