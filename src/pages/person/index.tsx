@@ -6,6 +6,9 @@ import { setPerson } from "../../redux/actions/peopleActions";
 import { PersonType } from "../../types";
 import fetchPersonById from "../../services/api/fetchPersonById";
 import { Loading } from "../../components/Loading";
+import logo from "../../assets/images/logo.png"
+import Navigation from "../../components/Navigation";
+import { Container } from "./styled";
 
 export default function PersonPage() {
     const params = useParams()
@@ -21,6 +24,10 @@ export default function PersonPage() {
         // eslint-disable-next-line
     }, [])
     return (
-        person ? <PersonDetails person={person} id={id}/> : <Loading data-testid="loader" />
+        <Container>
+            <img className="logo" alt="logo" src={logo} />
+            {person ? <PersonDetails person={person} id={id} /> : <Loading data-testid="loader" />}
+        </Container>
+
     )
 }

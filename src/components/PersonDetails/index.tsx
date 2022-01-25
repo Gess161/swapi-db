@@ -1,7 +1,6 @@
 
 import { PersonType } from "../../types";
 import { PersonContainer } from "../PersonDetails/styled";
-import logo from "../../assets/images/logo.png"
 import Navigation from "../Navigation";
 
 interface IPersonDetails {
@@ -25,7 +24,6 @@ export default function PersonDetails(props: IPersonDetails) {
 
     return (
         <PersonContainer>
-            <img className="logo" alt="logo" src={logo} />
             <Navigation person={name} />
             <div className="info" data-testid="info">
                 <img src={img} alt="character" className="person" />
