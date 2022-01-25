@@ -1,14 +1,18 @@
 import styled from "styled-components";
 
-const PeopleContainer = styled.div`
+const Container = styled.div`
+    .list {
+        display: flex;
+        width: 100%;
+        margin: 0 auto;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    flex-direction: column;
     display: flex;
     width: 80%;
     margin: 0 auto;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-
-
 `
 
-export default PeopleContainer;
+export default Container;

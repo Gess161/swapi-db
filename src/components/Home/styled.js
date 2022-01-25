@@ -25,6 +25,11 @@ export const Container = styled.div`
             width: 45%;
             flex-direction: column;
             border-radius: 2px;
+            &:hover {
+                -webkit-transform: scale(1.1);
+                -ms-transform: scale(1.1);
+                transform: scale(1.1);
+            }
             @media(max-width: 1140px){
                 width: 100%;
                 margin-bottom: 20px;

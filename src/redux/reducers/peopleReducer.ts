@@ -2,30 +2,10 @@ import { AnyAction } from "redux";
 import { FETCH_PEOPLE_FAILURE, FETCH_PEOPLE_SUCCES, FETCH_PEOPLE_REQUEST, SET_PERSON } from "../../constants";
 import { PeopleState } from "../../types"
 
-const initialPerson = {
-    birth_year: "birth year",
-    eye_color: "eye color",
-    films: ["first", "second"],
-    gender: "gender",
-    hair_color: "hair color",
-    height: "height",
-    homeworld: "homeworld",
-    mass: "mass",
-    name: "John Doe",
-    skin_color: "skin color",
-    created: new Date(),
-    edited: new Date(),
-    species: [""],
-    starships: [""],
-    url: "someurl",
-    vehicles: [''],
-}
-
 const initialState: PeopleState = {
     pending: false,
     error: null,
     people: [],
-    person: initialPerson,
     next: ""
 }
 

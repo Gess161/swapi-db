@@ -11,7 +11,7 @@ export default function PersonPage() {
     const params = useParams()
     const { id } = params;
     const dispatch = useAppDispatch()
-    const person: PersonType = useAppSelector(state => state.rootReducer.peopleReducer.person)
+    const person: any = useAppSelector(state => state.rootReducer.peopleReducer.person)
     const getPerson = async () => {
         const person: PersonType = await fetchPersonById(id)
         dispatch(setPerson(person))

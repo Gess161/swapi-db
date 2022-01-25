@@ -2,11 +2,15 @@ import styled from "styled-components";
 
 export const PersonContainer = styled.div`
     display: flex;
-    width: 25%;
-    height: 32vw;
+    width: 22,5%;
+    height: 25vw;
     justify-content: center;
     padding: 5px;
-
+    &:hover {
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+    }
     div {
         display: flex;
         flex-direction: column;

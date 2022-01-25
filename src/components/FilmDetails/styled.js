@@ -6,5 +6,7 @@ export const Container = styled.div`
     margin: 0 auto;
     .people {
         width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 `

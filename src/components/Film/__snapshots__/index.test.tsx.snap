@@ -2,7 +2,7 @@
 
 exports[`renders film card with title "Test" 1`] = `
 <div
-  className="sc-bdvvtL hcjCMW"
+  className="sc-bdvvtL huSZAf"
   onClick={[Function]}
 >
   <img

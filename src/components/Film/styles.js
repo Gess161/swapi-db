@@ -3,17 +3,21 @@ import styled from "styled-components"
 export const Container = styled.div`
     flex-direction: column;
     display: flex;
-    width: 32%;
-    height: 100%;
-    margin: 5px;
+    flex: 1;
+    margin-top: 20px;
     justify-content: center;
     align-items: center;
     border-radius: 2px;
+    &:hover {
+        -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        transform: scale(1.05);
+    }
 
     img {
         display: flex;
         height: 75%;
-        width: 100%;
+        width: 90%;
         border-radius: 2px 2px 0 0;
     }
     
@@ -26,7 +30,7 @@ export const Container = styled.div`
         display: flex;
         background-color: white;
         height: 25%;
-        width: 100%;
+        width: 90%;
         border-radius: 0 0 2px 2px;
     }
 

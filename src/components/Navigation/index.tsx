@@ -15,7 +15,7 @@ export default function Navigation(props: INavigation) {
             <Link className="nav" to="/">Home</Link>
             <p className="nav-last">/</p>
             <Link className={title || person ? "nav" : "nav-last"} to={isFilm ? "/films" : "/people"}> {isFilm ? "Films" : "People"}</Link>
-            <p className="nav-last"> / {title ? title : person}</p>
+            <p className="nav-last">/{title ? title : person}</p>
         </NavigationContainer>
     )
 }
