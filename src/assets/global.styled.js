@@ -58,7 +58,7 @@ const GlobalStyles = createGlobalStyle`
         margin: 0 auto;
         width: 100%;
         height: 100vh;
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'Poppins', sans-serif;
     }
 
     // background animation
