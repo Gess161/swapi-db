@@ -6,7 +6,9 @@ import { Loading } from "../Loading";
 import logo from "../../assets/images/logo.png"
 import Navigation from "../Navigation";
 import { FilmType } from "../../types";
-
+import FilmSelector from "../FilmSelector";
+import background from "../../assets/images/test.svg"
+import FilmCard from "../FilmCard";
 interface IFilms {
     navigate: NavigateFunction,
     films: FilmType[],
@@ -17,17 +19,9 @@ export default function FilmsComponent(props: IFilms) {
 
     return (
         <Container>
-            <img className="logo" alt="logo" src={logo} />
-            <Navigation isFilm={true} />
-            {films.length > 0 ? films.map((film: FilmType) => {
-                return <FilmComponent
-                    navigate={navigate}
-                    episode={film.episode_id}
-                    key={film.title}
-                    title={film.title}
-                />
-            }) : <Loading data-testid="loader"/>}
             <Outlet />
+            <FilmSelector />
+            <FilmCard />
         </Container>
     )
 }
