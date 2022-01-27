@@ -1,32 +1,21 @@
 import { Container } from "./styled";
 import logo from "../../assets/images/logo.png"
-import { NavigateFunction } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-interface IHome {
-    navigate: NavigateFunction,
-}
-
-export default function HomeComponent(props: IHome) {
-    const { navigate } = props;
+export default function HomeComponent() {
     return (
         <Container>
-            <div className="logo-container">
-                <img className="logo" alt="logo" src={logo} />
+            <div className="item-container item-container-small">
+                <Link className="item" to="/films">Movie</Link>
+                <Link className="item" to="/people">Databank</Link>
+                <Link className="item" to="/">News</Link>
             </div>
-            <div className="home">
-                <div className="container" onClick={() => navigate("/people")}>
-                    <img alt="characters" src="https://starwars-visualguide.com/assets/img/categories/character.jpg" />
-                    <p>
-                        Characters
-                    </p>
-                </div>
-                <div className="container" onClick={() => navigate("/films")}>
-                    <img alt="films" src="https://starwars-visualguide.com/assets/img/categories/starships.jpg" />
-                    <p>
-                        Films
-                    </p>
-                </div>
+            <div className="item-container"/>
+            <div className="item-container"/>
+            <div className="item-container item-container-small">
+                <input className="item" placeholder="Search" />
             </div>
+            <img src={logo} />
         </Container>
     )
 }

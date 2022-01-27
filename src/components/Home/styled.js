@@ -1,52 +1,67 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    margin: 0 auto;
-    width: 80%;
+    margin: 70px auto;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    .home {
-        margin-top: 16px;
+    height: 50px;
+    width: 87.85%;
+    justify-content: space-between;
+    position: relative;
+    .item {
         display: flex;
-        flex-direction: row;
-        width: 80%;
-        height: 100%;
         justify-content: space-between;
-        @media(max-width: 1140px){
-            flex-direction: column;
-            align-items: center;
-        }
-        .container {
-            display: flex;
-            height: 100%;
-            width: 45%;
-            flex-direction: column;
-            border-radius: 2px;
-            &:hover {
-                -webkit-transform: scale(1.1);
-                -ms-transform: scale(1.1);
-                transform: scale(1.1);
-            }
-            @media(max-width: 1140px){
-                width: 100%;
-                margin-bottom: 20px;
-            }
-            p {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 1.3rem;
-                background-color: white;
-                width: 100%;
-                height: 50px;
-            }
-        }
-        img {
-            height: 100%;
-            width: 100%;
+        text-transform: uppercase;
+        color: #FFF;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        text-decoration: none;
+        &:hover {
+            color: hsl(46,100%,49%);
         }
     }
+    .item-container {
+        position: relative;
+        display: flex;
+        width: 22%;
+        border-bottom: 1px solid #FFF;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+    .item-container-small {
+        &:after, &:before {
+            position: absolute;
+            content: '';
+            height: 1px;
+            width: 40px;
+            background-color: #FFF;
+            transform: rotate(90deg);
+            right: -12%;
+            z-index: 1;
+        }
+        &:before {
+            left: -12%;
+            right: 0;
+        }
+    }
+    input {
+        width: 100%;
+        padding-left: 10px;
+        border: none;
+        outline: none;
+        background-color:rgba(0, 0, 0, 0.1);
+        ::placeholder {
+            color: #FFF;
+        }
+    }
+    img {
+        display: flex;
+        position: absolute;
+        margin: 0 auto;
+        top: -110%;
+        left: 43.5%;
+        width: 200px;
+    }
+}
 `
