@@ -57,6 +57,9 @@ export interface PeopleState {
     pending: boolean,
     error: string | null,
     people: PersonType[] | [],
-    person?: PersonType,
+    person: {
+        person: PersonType,
+        id: string | number  
+    } | {},
     next: string,
 }

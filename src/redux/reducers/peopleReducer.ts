@@ -6,6 +6,7 @@ const initialState: PeopleState = {
     pending: false,
     error: null,
     people: [],
+    person: {},
     next: ""
 }
 
@@ -14,7 +15,10 @@ export default function peopleReducer(state = initialState, action: AnyAction): 
         case SET_PERSON:
             return {
                 ...state,
-                person: action.payload
+                person: {
+                    ...state.person,
+                    [action.payload.id]: action.payload.person
+                }
             }
         case FETCH_PEOPLE_REQUEST:
             return {
