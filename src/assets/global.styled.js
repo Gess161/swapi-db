@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import dinBold from "../assets/fonts/DIN-Bold.ttf"
 
 const GlobalStyles = createGlobalStyle`
     * {
@@ -11,16 +12,10 @@ const GlobalStyles = createGlobalStyle`
         transition: all 0.3s ease;
     }
 
-    .App {
+    .react-card-flip {
         width: 100%;
         height: 100%;
     }
-    
-    #root {
-        width: 100%;
-        height: 100%;
-    }
-
     li {
         list-style-type: none;
         white-space: nowrap;
@@ -55,9 +50,8 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        margin: 0 auto;
-        width: 100%;
-        height: 100vh;
+        color: #FFF;
+        height: fit-content;
         font-family: 'Poppins', sans-serif;
     }
 
@@ -75,6 +69,10 @@ const GlobalStyles = createGlobalStyle`
         to {background-position:-10000px 5000px;}
     }
 
+    @font-face {
+        font-family: "DIN-Cond Bold" ;
+        src: url(${dinBold})
+}
 `
 
 export default GlobalStyles;
