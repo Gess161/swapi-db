@@ -2,35 +2,38 @@ import styled from "styled-components";
 
 export const PersonContainer = styled.div`
     display: flex;
-    flex-direction: column;
+    height: 100%;
     width: 100%;
-    margin: 0 auto;
-
+    background-color: #282727;
     .info {
-        width: 100%;
-        height: 30%;
-        background-color: white;
-        margin: 5px auto;
-        flex-direction: row;
-        border-radius: 2px;
         display: flex;
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
     }
-
-    .person {
-        width: 23%;
-        height: 300px;
-        object-fit: cover;
-        object-position: center 20%;
-        @media(max-width: 800px){
-            width: 35%;
+    .info-item {
+        padding: 20px 0 0 20px;
+        width: 100%;
+        h1 {
+            padding: 5px;
+            text-transform: uppercase;
+            font-size: 1rem;
         }
-    }
-
-    h1 {
-        font-size: 24px;
-        font-weight: 600;
-        color: black;
-        padding: 20px;
+        p {
+            position: relative;
+            padding: 5px;
+            font-size: 0.9rem;
+            color: gold;
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: -13px;
+                left: 5px;
+                width: 50%;
+                height: 1px;
+                background: white;
+            }
+        }
     }
 
     ul {

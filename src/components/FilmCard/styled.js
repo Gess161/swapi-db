@@ -34,19 +34,18 @@ export const FilmCardContainer = styled.div`
         display: flex;
         flex-direction: column;
         padding: 5%;
-        color: #FFF;
         .films {
+            font-family: "DIN-Cond Bold";
             position: absolute;
-            bottom: -10%;
+            bottom: -5%;
             display: flex;
             justify-self: flex-end;
             width: 100%;
-            align-items: center;
             text-transform: uppercase;
             color: #FDC400;
             cursor: pointer;
             img {
-                width: 2%;
+                width: 2.2%;
                 height: 5%;
                 margin-right: 5px;
             }

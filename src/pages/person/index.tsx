@@ -6,26 +6,26 @@ import { setPerson } from "../../redux/actions/peopleActions";
 import { PersonType } from "../../types";
 import fetchPersonById from "../../services/api/fetchPersonById";
 import { Loading } from "../../components/Loading";
-import logo from "../../assets/images/logo.png"
 import { Container } from "./styled";
 
-export default function PersonPage() {
-    const params = useParams()
-    const { id } = params;
+export default function PersonPage(props: any) {
+    const { id } = props;
     const dispatch = useAppDispatch()
     const person: any = useAppSelector(state => state.rootReducer.peopleReducer.person)
     const getPerson = async () => {
         const person: PersonType = await fetchPersonById(id)
-        dispatch(setPerson(person))
+        dispatch(setPerson({
+            person: person,
+            id: id
+        }))
     }
     React.useEffect(() => {
         getPerson()
         // eslint-disable-next-line
     }, [])
     return (
-        <Container>
-            <img className="logo" alt="logo" src={logo} />
-            {person ? <PersonDetails person={person} id={id} /> : <Loading data-testid="loader" />}
+        <Container data-testid="person-info">
+            {person[id] ? <PersonDetails person={person[id]} id={id} /> : <Loading data-testid="loader" />}
         </Container>
 
     )

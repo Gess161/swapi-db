@@ -7,10 +7,13 @@ import facebook from "../../assets/images/Facebook.png"
 export default function Socials() {
     return (
         <SocialsContainer>
-            <input type="image" src={instagram} alt="instagram" />
-            <input type="image" src={facebook} alt="facebook" />
-            <input type="image" src={youtube} alt="youtube" />
-            <input type="image" src={twitter} alt="twitter" />
+            <h1>Follow starwars</h1>
+            <div className="icons-container">
+                <input type="image" src={instagram} alt="instagram" />
+                <input type="image" src={facebook} alt="facebook" />
+                <input type="image" src={youtube} alt="youtube" />
+                <input type="image" src={twitter} alt="twitter" />
+            </div>
         </SocialsContainer>
     )
 }

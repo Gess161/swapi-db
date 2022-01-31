@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import * as React from "react"
 import FilmDetailsComponent from "../../components/FilmDetails";
 import { useAppDispatch, useAppSelector } from "../../hooks";
@@ -18,7 +18,6 @@ interface IPerson {
 export default function FilmPage() {
     const initialState: IPerson[] = [];
     const dispatch = useAppDispatch()
-    const navigate = useNavigate()
     const [people, setPeople] = React.useState(initialState)
     const films: FilmType[] = useAppSelector(state => state.rootReducer.filmsReducer.films)
     const { filmId } = useParams()
@@ -50,7 +49,6 @@ export default function FilmPage() {
             films={films}
             people={people}
             episode={+filmId!}
-            navigate={navigate}
         />
     )
 }

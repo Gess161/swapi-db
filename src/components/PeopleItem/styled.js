@@ -2,37 +2,50 @@ import styled from "styled-components";
 
 export const PersonContainer = styled.div`
     display: flex;
-    width: 22,5%;
-    height: 25vw;
+    width: 21.5%;
+    height: 28vw;
     justify-content: center;
-    padding: 5px;
-    &:hover {
-        -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-        transform: scale(1.1);
+    margin: 10px;
+    position: relative;
+ 
+    .flipper {
+        height: 100%;
+        width: 100%;
     }
-    div {
+    .person {
         display: flex;
         flex-direction: column;
         width: 100%;
         height: 100%;
+        position: absolute;
     }
-    p {
-        color: grey;
-        font-size: 1rem;
+
+    .name {
+        font-size: 1.5rem;
+        font-weight: 600;
+        text-transform: uppercase;
         justify-content: center;
         align-items: center;
         display: flex;
-        background-color: white;
-        height: 15%;
-        width: 100%
-        border-radius: 0 0 2px 2px;
+        background-color: #282727;
+        height: 100%;
+        width: 100%;
+        position: relative;
+        &:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: hsl(46,100%,49%);
+            top: 0;
+        }
     }
     img {
-        border-radius: 2px 2px 0 0;
         object-fit: fill;
-        height: 75%;
+        height: 80%;
+        width: 100%;
         display: flex;
+
     }
     @media(max-width: 800px){
         width: 33%;

@@ -4,15 +4,16 @@ const Container = styled.div`
     .list {
         display: flex;
         width: 100%;
-        margin: 0 auto;
+        margin: 0 auto 10%;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
         flex-wrap: wrap;
     }
     flex-direction: column;
     display: flex;
-    width: 80%;
+    width: 87.85%;
     margin: 0 auto;
+    position: relative;
 `
 
 export default Container;

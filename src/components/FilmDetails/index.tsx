@@ -17,11 +17,10 @@ interface IFilmDetails {
     films: FilmType[],
     people: IPerson[],
     episode: number,
-    navigate: NavigateFunction,
 }
 
 export default function FilmDetailsComponent(props: IFilmDetails) {
-    const { episode, films, people, navigate } = props
+    const { episode, films, people } = props
     return (
         <Container>
             <img className="logo" alt="logo" src={logo} />
@@ -33,7 +32,7 @@ export default function FilmDetailsComponent(props: IFilmDetails) {
             <PeopleContainer className="people">
                 {people.length > 0 ? Object.values(people).map((person) => {
                     return (
-                        <PeopleItem navigate={navigate} key={person.name} name={person.name} id={person.id} image={person.image} />
+                        <PeopleItem key={person.name} name={person.name} id={person.id} image={person.image} />
                     )
                 }) : <Loading data-testid="loader" />}
             </PeopleContainer>

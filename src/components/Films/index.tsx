@@ -7,7 +7,6 @@ import logo from "../../assets/images/logo.png"
 import Navigation from "../Navigation";
 import { FilmType } from "../../types";
 import FilmSelector from "../FilmSelector";
-import background from "../../assets/images/test.svg"
 import FilmCard from "../FilmCard";
 interface IFilms {
     navigate: NavigateFunction,
