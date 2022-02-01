@@ -7,7 +7,6 @@ import { FilmType } from "../../types";
 
 export default function FilmsPage() {
     const dispatch = useAppDispatch()
-    const navigate = useNavigate()
     const state = useAppSelector(state => state.rootReducer.filmsReducer)
     const films: FilmType[] = state.films
 
@@ -19,7 +18,6 @@ export default function FilmsPage() {
 
     return (
         <FilmsComponent
-            navigate={navigate}
             films={films}
         />
     )

@@ -13,7 +13,7 @@ const TestWrapper = (props: any) => {
     const navigate = useNavigate()
     const { arr } = props;
     return (
-        <People navigate={navigate} people={arr} url="someurl" fetchData={mockFunction} />
+        <People  people={arr} url="someurl" fetchData={mockFunction} />
     )
 }
 

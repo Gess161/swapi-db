@@ -1,5 +1,4 @@
 import React from "react";
-import { NavigateFunction } from "react-router-dom";
 import PersonPage from "../../pages/person";
 import { PersonContainer } from "./styled";
 import ReactCardFlip from "react-card-flip"

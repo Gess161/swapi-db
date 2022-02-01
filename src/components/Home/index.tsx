@@ -15,7 +15,7 @@ export default function HomeComponent() {
             <div className="item-container item-container-small">
                 <input className="item" placeholder="Search" />
             </div>
-            <img src={logo} />
+            <img src={logo} alt="logo" />
         </Container>
     )
 }

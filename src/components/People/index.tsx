@@ -5,18 +5,17 @@ import { PersonType } from "../../types"
 import { Loading } from "../Loading"
 import PeopleItem from "../PeopleItem"
 import Container from "./styled"
-import { NavigateFunction } from "react-router-dom"
 import Socials from "../Socials"
+import DatabankSearch from "./DatabankSearch"
 
 interface IPeople {
     people: PersonType[],
     url: string,
     fetchData: () => void,
-    navigate: NavigateFunction,
 }
 
 export default function People(props: IPeople) {
-    const { people, url, fetchData, navigate } = props;
+    const { people, url, fetchData } = props;
     return (
         <InfiniteScroll
             className="scroll"
@@ -26,6 +25,8 @@ export default function People(props: IPeople) {
             next={fetchData}
         >
             <Container data-testid="container">
+                <h2>Databank</h2>
+                <DatabankSearch              />
                 {people.length > 0 ?
                     <div className="list">
                         {

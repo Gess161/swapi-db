@@ -1,8 +1,6 @@
 
 import { PersonType } from "../../types";
 import { PersonContainer } from "../PersonDetails/styled";
-import Navigation from "../Navigation";
-
 interface IPersonDetails {
     id?: string;
     person: PersonType
@@ -25,11 +23,11 @@ export default function PersonDetails(props: IPersonDetails) {
             <div className="info">
                 <div className="info-item">
                     <h1>height</h1>
-                    <p>{height}</p>
+                    <p>{height}cm</p>
                 </div>
                 <div className="info-item">
                     <h1>mass</h1>
-                    <p>{mass}</p>
+                    <p>{mass}kg</p>
                 </div>
                 <div className="info-item">
                     <h1>gender</h1>

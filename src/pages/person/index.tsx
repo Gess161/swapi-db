@@ -1,5 +1,4 @@
 import * as React from "react"
-import { useParams } from "react-router-dom"
 import PersonDetails from "../../components/PersonDetails";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 import { setPerson } from "../../redux/actions/peopleActions";

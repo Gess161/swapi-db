@@ -9,6 +9,7 @@ export const FilmCardContainer = styled.div`
     .film-img {
         display: flex;
         object-fit: cover;
+        object-position: 0 25.5%;
         width: 50%;
         height: 100%;
     }
@@ -26,7 +27,7 @@ export const FilmCardContainer = styled.div`
             width: 18.02vw;
             transform: rotate(90deg);
             right: -20.5%;
-            top: 49%;
+            top: 49.5%;
         }
     }
     .text-container {
@@ -37,13 +38,13 @@ export const FilmCardContainer = styled.div`
         .films {
             font-family: "DIN-Cond Bold";
             position: absolute;
-            bottom: -5%;
+            bottom: -3%;
             display: flex;
             justify-self: flex-end;
             width: 100%;
             text-transform: uppercase;
             color: #FDC400;
-            cursor: pointer;
+            cursor: default;
             img {
                 width: 2.2%;
                 height: 5%;
