@@ -1,6 +1,13 @@
 import styled from "styled-components";
 
 const Container = styled.div`
+    flex-direction: column;
+    display: flex;
+    width: 87.85%;
+    margin: 0 auto;
+    position: relative;
+    min-height: 100vh;
+
     .list {
         display: flex;
         width: 100%;
@@ -9,13 +16,7 @@ const Container = styled.div`
         justify-content: space-between;
         flex-wrap: wrap;
     }
-    flex-direction: column;
-    display: flex;
-    width: 87.85%;
-    margin: 0 auto;
-    position: relative;
-    min-height: 100vh;
-
+    
     h2 {
         margin-left: 10px;
         text-transform: uppercase;

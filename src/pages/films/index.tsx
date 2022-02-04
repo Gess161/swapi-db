@@ -1,6 +1,5 @@
 import FilmsComponent from "../../components/Films";
 import { useAppDispatch, useAppSelector } from "../../hooks";
-import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { fetchFilmsRequest } from "../../redux/actions/filmsActions";
 import { FilmType } from "../../types";
