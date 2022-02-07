@@ -1,4 +1,3 @@
-import Navigation from "../../Navigation"
 import { AboutFilmContainer } from "./styled"
 import { FilmType } from "../../../types"
 
@@ -13,7 +12,6 @@ export default function AboutFilm(props: IAboutFilm) {
 
     return (
         <AboutFilmContainer>
-            <Navigation title={title} isFilm={true} />
             <div className="container">
                 <h1>{title && title}</h1>
                 <h3>Episode {episode}</h3>

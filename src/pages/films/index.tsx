@@ -6,7 +6,7 @@ import { FilmType } from "../../types";
 
 export default function FilmsPage() {
     const dispatch = useAppDispatch()
-    const state = useAppSelector(state => state.rootReducer.filmsReducer)
+    const state = useAppSelector(state => state.persistedReducer.filmsReducer)
     const films: FilmType[] = state.films
 
     useEffect(() => {

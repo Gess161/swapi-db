@@ -1,14 +1,14 @@
 import { Outlet } from "react-router-dom";
 import StarrySky from "../Background";
-import HomeComponent from "../Home";
+import Navigation from "../Navigation";
 import { Wrapper } from "./styled";
 
 export default function Layout() {
-    return (
-        <Wrapper>
-            <HomeComponent />
-            <Outlet />
-            <StarrySky />
-        </Wrapper>
-    )
+  return (
+    <Wrapper>
+      <Navigation />
+      <Outlet />
+      <StarrySky />
+    </Wrapper>
+  )
 }

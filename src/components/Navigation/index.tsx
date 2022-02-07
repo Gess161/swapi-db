@@ -1,21 +1,23 @@
-import { Link } from "react-router-dom"
-import { NavigationContainer } from "./styled"
+import { Container } from "./styled";
+import logo from "../../assets/images/logo.png"
+import { Link } from "react-router-dom";
 
-interface INavigation {
-    title?: string,
-    person?: string,
-    isFilm?: boolean
-}
-
-export default function Navigation(props: INavigation) {
-    const { title, person, isFilm } = props;
-
-    return (
-        <NavigationContainer className="block">
-            <Link className="nav" to="/">Home</Link>
-            <p className="nav-last">/</p>
-            <Link className={title || person ? "nav" : "nav-last"} to={isFilm ? "/films" : "/people"}> {isFilm ? "Films" : "People"}</Link>
-            <p className="nav-last">/{title ? title : person}</p>
-        </NavigationContainer>
-    )
+export default function HomeComponent() {
+  return (
+    <Container>
+      <nav>
+        <div className="item-container item-container-small">
+          <Link className="item" to="/films">Movie</Link>
+          <Link className="item" to="/people">Databank</Link>
+          <Link className="item" to="/">News</Link>
+        </div>
+        <div className="item-container" />
+        <div className="item-container" />
+        <div className="item-container item-container-small">
+          <input className="item" placeholder="Search" />
+        </div>
+      </nav>
+      <img src={logo} alt="logo" />
+    </Container>
+  )
 }

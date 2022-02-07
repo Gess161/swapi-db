@@ -19,7 +19,7 @@ export default function FilmPage() {
     const initialState: IPerson[] = [];
     const dispatch = useAppDispatch()
     const [people, setPeople] = React.useState(initialState)
-    const films: FilmType[] = useAppSelector(state => state.rootReducer.filmsReducer.films)
+    const films: FilmType[] = useAppSelector(state => state.persistedReducer.filmsReducer.films)
     const { filmId } = useParams()
 
     React.useEffect(() => {

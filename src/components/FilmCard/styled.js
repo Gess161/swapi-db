@@ -4,7 +4,7 @@ import bg from "../../assets/images/card-bg.svg"
 export const FilmCardContainer = styled.div`
     margin: 40px 0 40px 0;
     width: 100%;
-    height: 18.02vw;
+    height: calc(18.02vw + (1920px - 100vw) / 3);
     display: flex;
     .film-img {
         display: flex;
@@ -19,15 +19,14 @@ export const FilmCardContainer = styled.div`
         height: 100%;
         background: url(${bg});
         background-size: cover;
-        &::before {
+        &::after {
             position: absolute;
             content: '';
-            height: 3px;
+            height: calc(18.02vw + (1920px - 100vw) / 3);
             background-color: hsl(46,100%,49%);
-            width: 18.02vw;
-            transform: rotate(90deg);
-            right: -20.5%;
-            top: 49.5%;
+            width: 3px;
+            right: 0%;
+            bottom: 0%;
         }
     }
     .text-container {
@@ -35,10 +34,11 @@ export const FilmCardContainer = styled.div`
         display: flex;
         flex-direction: column;
         padding: 5%;
+        height: 100%;
         .films {
             font-family: "DIN-Cond Bold";
             position: absolute;
-            bottom: -3%;
+            bottom: 10%;
             display: flex;
             justify-self: flex-end;
             width: 100%;

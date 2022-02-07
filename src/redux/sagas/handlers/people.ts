@@ -4,7 +4,6 @@ import { requestFetchPeople } from "../requests/people";
 import { Response } from "../../../types";
 
 export function* handleFetchPeople(action: any) {
-
     const url: string = action.payload
     try {
         const response: Response = yield call(requestFetchPeople, url);

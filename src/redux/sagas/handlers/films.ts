@@ -1,7 +1,6 @@
 import { call, put } from "@redux-saga/core/effects";
 import { fetchFilmsSucces } from "../../actions/filmsActions";
 import { requestFetchFilms } from "../requests/films";
-
 import { FilmType, Response } from "../../../types";
 
 export function* handleFetchFilms(action: any) {
@@ -19,10 +18,8 @@ export function* handleFetchFilms(action: any) {
             const filmEpisode = film.episode_id;
             films.splice(filmEpisode - 1, 0, film);
         }
-        console.log(results)
-        console.log(films)
         yield put(fetchFilmsSucces(films));
     } catch (error) {
-        console.log(error);
+        console.error(error);
     }
 }

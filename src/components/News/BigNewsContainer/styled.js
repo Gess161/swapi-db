@@ -6,6 +6,9 @@ export const StyledBigContainer = styled.div`
     flex-direction: column;
     height: 22vw;
     width: 100%;
+    @media(max-width: 1000px){
+        height: calc(30vw + (1920px - 100vw)/ 15);
+    }
     img {
         display: flex;
         width: 100%;

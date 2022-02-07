@@ -5,7 +5,7 @@ import { PeopleState, PersonType } from "../../types";
 import { fetchPeopleRequest } from "../../redux/actions/peopleActions";
 
 export default function PeoplePage(){
-    const state: PeopleState = useAppSelector(state => state.rootReducer.peopleReducer)
+    const state: PeopleState = useAppSelector(state => state.persistedReducer.peopleReducer)
     const people: PersonType[] = state.people
     const dispatch = useAppDispatch()
     const url: string = state.next

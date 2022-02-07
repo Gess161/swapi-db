@@ -1,7 +1,7 @@
-import HomeComponent from "../../components/Home"
+import Navigation from "../../components/Navigation"
 
 export default function HomePage(props: any) {
     return(
-        <HomeComponent />
+        <Navigation />
     )
 }

@@ -6,6 +6,10 @@ export const StyledSmallContainer = styled.div`
     flex-direction: column;
     height: 22vw;
     width: 29.5vw;
+    @media(max-width: 1000px){
+        width: 50%;
+        height: calc(30vw + (1920px - 100vw)/ 20);
+    }
     :not(:last-child) {
         margin: 0 3% 0 0;
     }
